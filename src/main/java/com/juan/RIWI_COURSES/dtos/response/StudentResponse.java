@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 
 public class StudentResponse {
-
+    //Media without id and status
     private String name;
     private String email;
     private String clase;

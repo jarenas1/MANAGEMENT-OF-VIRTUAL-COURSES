@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ClassResponse {
 
-
+    //Media without id and status
     private String name;
     private String description;
     private String student_id;
