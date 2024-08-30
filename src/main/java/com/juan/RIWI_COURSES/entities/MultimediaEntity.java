@@ -1,7 +1,15 @@
 package com.juan.RIWI_COURSES.entities;
 
 import com.juan.RIWI_COURSES.utils.Type;
+import jakarta.persistence.Entity;
+import lombok.*;
 
+@Entity
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class MultimediaEntity {
 
     private String id;
