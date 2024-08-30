@@ -26,9 +26,10 @@ public class LessonEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "class_id", nullable = false)  // Clave foránea que apunta a la entidad ClassEntity
-    private ClassEntity classEntity;
+    @JoinColumn(name = "class_id", nullable = false)  //Se indica el nombre de la columna que va a contener la foregin key
+    private ClassEntity classEntity; //Se indica por medio de la instacia la clase de la que se llama la PK
 
-    @OneToMany(mappedBy = "lessonEntity", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MultimediaEntity> multimedia = new ArrayList<>();
+
+    @OneToMany(mappedBy = "lessonEntity", cascade = CascadeType.ALL, orphanRemoval = true)//INDICA DONDE ESTA EL LADO DE LA RELACION PRINCIPAL(mappedBy)
+    private List<MultimediaEntity> multimedia;
 }
