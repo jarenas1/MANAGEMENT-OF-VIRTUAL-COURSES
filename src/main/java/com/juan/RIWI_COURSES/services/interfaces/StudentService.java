@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface StudentService extends ReadAll<StudentEntity>,
         ReadByID<StudentEntity, String>,
-        Create<StudentRequest, String>,
+        /*Create<StudentRequest, StudentEntity>,*/
         Save<StudentEntity>,
         Destroy<StudentEntity>{
     //Atributos de StudentService

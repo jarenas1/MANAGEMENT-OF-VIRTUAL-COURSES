@@ -1,5 +1,6 @@
 package com.juan.RIWI_COURSES.services.implementations;
 
+import com.juan.RIWI_COURSES.dtos.request.StudentRequest;
 import com.juan.RIWI_COURSES.entities.StudentEntity;
 import com.juan.RIWI_COURSES.repositories.StudentRepository;
 import com.juan.RIWI_COURSES.services.interfaces.StudentService;
@@ -28,10 +29,10 @@ public class StudentServiceImpl implements StudentService {
         return this.studentRepo.findById(id).orElseThrow();
     }
 
-    @Override
+    /*@Override
     public StudentEntity create(StudentRequest studentRequest) {
         return this.studentRepo.save(studentRequest);
-    }
+    }*/
 
     @Override
     public StudentEntity save(StudentEntity studentEntity) {
@@ -42,4 +43,5 @@ public class StudentServiceImpl implements StudentService {
     public void destroy(StudentEntity studentEntity) {
         this.studentRepo.delete(studentEntity);
     }
+
 }
