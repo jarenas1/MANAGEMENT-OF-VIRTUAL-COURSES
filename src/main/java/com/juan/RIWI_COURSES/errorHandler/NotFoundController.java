@@ -3,22 +3,22 @@ package com.juan.RIWI_COURSES.errorHandler;
 import com.juan.RIWI_COURSES.dtos.errors.BaseErrorResponse;
 import com.juan.RIWI_COURSES.dtos.errors.ErrorResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.transaction.CannotCreateTransactionException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 @RestControllerAdvice
-@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) //ERROR DEL SERVIDOR
-public class InternalServerController {
+@ResponseStatus(code = HttpStatus.NOT_FOUND) //No encontrado
+public class NotFoundController {
 
 
-    @ExceptionHandler(Exception.class)
-    public BaseErrorResponse handleGlobalException(Exception ex) {
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public BaseErrorResponse handleInternalServerError(Exception exception) {
         return ErrorResponse.builder()
-                .message("An unexpected error occurred: " + ex.getMessage())
-                .status(HttpStatus.INTERNAL_SERVER_ERROR.name())
-                .code(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .message("Check your url. " + exception.getMessage())
+                .status(HttpStatus.NOT_FOUND.name())
+                .code(HttpStatus.NOT_FOUND.value())
                 .build();
     }
 }
