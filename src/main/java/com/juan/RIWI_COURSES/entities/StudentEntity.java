@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,9 +30,10 @@ public class StudentEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "class_id", referencedColumnName = "id")
-    private ClassEntity classEntity;
+    private ClassEntity class_id;
 
-
+    @OneToMany(mappedBy = "studentEntity" , cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<ClassEntity> classes;
 
 
 
