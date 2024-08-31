@@ -24,8 +24,5 @@ public class StudentRequest {
     private String name;
     @Email
     private String email;
-    @NotNull(message = "El id de la clase no puede ser nulo")
-    private String class_id;
-
 
 }

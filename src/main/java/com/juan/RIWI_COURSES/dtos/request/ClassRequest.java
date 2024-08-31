@@ -19,7 +19,4 @@ public class ClassRequest {
     private String name;
     @NotBlank(message = "La descripción de la clase no puede estar vacía")
     private String description;
-
-    @NotNull(message = "El estado de la clase no puede ser nula")
-    private Boolean status;
 }
