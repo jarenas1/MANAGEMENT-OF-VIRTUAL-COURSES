@@ -7,8 +7,8 @@ import com.juan.RIWI_COURSES.services.CRUD.*;
 public interface MultimediaService extends ReadAll<MultimediaEntity>,
         ReadByID<MultimediaEntity, String>,
         Create<MultimediaRequest, String>,
-        Save<MultimediaEntity>/*,
-        Destroy<String>*/{
+        Save<MultimediaEntity>,
+        Destroy<String>{
     //Atributos de MultimediaService
     //Constructores de MultimediaService
     //Asignadores de atributos de MultimediaService (setters)
