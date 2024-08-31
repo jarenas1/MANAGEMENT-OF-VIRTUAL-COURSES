@@ -29,13 +29,16 @@ public class ClassEntity {
     private LocalDate createAt;
     @Column(nullable = false)
     private Boolean status;
+    @JoinColumn(name = "student_id", nullable = false)
+    private StudentEntity student;
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "class", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "classEntity", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<StudentEntity> students;
-
-
-
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "classEntity" , cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<LessonEntity> lessons;
 
 
 
