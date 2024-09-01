@@ -22,6 +22,13 @@ public class ClassController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
 
-
         Page<Class> paginatedClasses = classService.getPaginatedClasses(name, description, page, size);
+
+        //Check if paginated classes are empty
+        if (paginatedClasses.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(paginatedClasses);
+    }
 }
