@@ -38,7 +38,7 @@ public class StudentController {
 
     //LIST OF ACTIVE STUDENTS
 
-    @PostMapping("students")
+    @GetMapping("students")
     public  ResponseEntity<ArrayList<StudentResponse>> readActive(){
         ArrayList<StudentEntity> studentEntities = (ArrayList<StudentEntity>) studentService.readAll();
         ArrayList<StudentResponse> studentResponses = new ArrayList<>();
@@ -60,6 +60,7 @@ public class StudentController {
 
     //Save
 
+    @PostMapping("students")
     public ResponseEntity<StudentEntity> save (@RequestBody StudentRequest studentRequest){
         StudentEntity studentEntity = StudentEntity.builder()
                 .id(studentRequest.getId())
@@ -70,6 +71,7 @@ public class StudentController {
                 .class_id(new ClassEntity())
                 .classes(new ArrayList<ClassEntity>()).build();
 
+        studentService.save(studentEntity);
         return ResponseEntity.ok(studentEntity);
     }
 }
