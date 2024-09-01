@@ -6,7 +6,7 @@ import com.juan.RIWI_COURSES.services.CRUD.*;
 
 public interface LessonService extends ReadAll<LessonEntity>,
         ReadByID<LessonEntity, String>,
-        Create<LessonRequest, String>,
+        /*Create<LessonRequest, String>,*/
         Save<LessonEntity>,
         Destroy<String> {
     //Atributos de LessonService

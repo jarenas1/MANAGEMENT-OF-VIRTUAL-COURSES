@@ -40,8 +40,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void destroy(StudentEntity studentEntity) {
-        this.studentRepo.delete(studentEntity);
+    public void destroy(String id) {
+        this.studentRepo.deleteById(id);
     }
-
 }
