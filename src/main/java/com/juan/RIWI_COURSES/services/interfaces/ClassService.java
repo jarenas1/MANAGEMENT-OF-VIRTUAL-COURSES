@@ -6,7 +6,7 @@ import com.juan.RIWI_COURSES.services.CRUD.*;
 
 public interface ClassService extends ReadAll<ClassEntity>,
         ReadByID<ClassEntity, String>,
-        Create<ClassRequest, String>,
+        /*Create<ClassRequest, String>,*/
         Save<ClassEntity>,
         Destroy<String>{
     //Atributos de ClassService
