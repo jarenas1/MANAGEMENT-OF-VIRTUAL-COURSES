@@ -16,4 +16,23 @@ public class LessonController {
     LessonService lessonService;
 
 
+    @PostMapping("lesson")
+    public ResponseEntity<LessonEntity>save(@RequestBody LessonRequest lessonRequest){
+        LessonEntity lessonEntity = LessonEntity.builder().id(lessonRequest.getId())
+                .name(lessonRequest.getName())
+                .multimedia(new ArrayList<>())
+                .status(true).build();
+
+        lessonService.save(lessonEntity);
+
+        return ResponseEntity.ok(lessonEntity);
+    }
+
+    @GetMapping("lesson/{id}")
+    public ResponseEntity<LessonEntity>findById(@PathVariable String id){
+        LessonEntity lessonEntity = lessonService.readByID(id);
+
+        return ResponseEntity.ok(lessonEntity);
+    }
+
 }
