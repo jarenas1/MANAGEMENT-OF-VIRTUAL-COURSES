@@ -11,6 +11,6 @@ public interface ClassService extends
         Save<ClassEntity>,
         Destroy<String>{
 
-    public Page<Class> getPaginatedClasses(String name, String description, int page, int size);
-    public Optional<Class> getClassById(Long id);
+    public Page<ClassEntity> getPaginatedClasses(String name, String description, int page, int size);
+    public Optional<ClassEntity> getClassById(String id);
 }

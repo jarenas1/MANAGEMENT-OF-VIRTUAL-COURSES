@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface ClassRepository extends JpaRepository<ClassEntity, String> {
 
-    Page<Class> findPageable (String name, String description, Pageable pageable);
-    Optional<Class> findByIdAndActive(Long id);
+    Page<ClassEntity> findPageable (String name, String description, Pageable pageable);
+    Optional<ClassEntity> findByIdAndActive(Long id);
 }

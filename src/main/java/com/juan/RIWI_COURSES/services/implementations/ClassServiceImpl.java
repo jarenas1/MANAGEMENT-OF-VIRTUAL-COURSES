@@ -29,13 +29,13 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public Page<Class> getPaginatedClasses(String name, String description, int page, int size) {
+    public Page<ClassEntity> getPaginatedClasses(String name, String description, int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return classRepo.findPageable(name,description,pageable);
     }
 
     @Override
-    public Optional<Class> getClassById(Long id) {
+    public Optional<ClassEntity> getClassById(Long id) {
         return classRepo.findByIdAndActive(id);
     }
 }
