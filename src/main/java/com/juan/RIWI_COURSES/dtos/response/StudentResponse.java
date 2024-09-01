@@ -2,10 +2,7 @@ package com.juan.RIWI_COURSES.dtos.response;
 
 import com.juan.RIWI_COURSES.entities.ClassEntity;
 import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,13 +10,14 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 
 public class StudentResponse {
     //Media without id and status
     private String name;
     private String email;
-    private String clase;
-    private ClassEntity class_id;
+    private Boolean active;
     private List<ClassEntity> classes;
+
 
 }
