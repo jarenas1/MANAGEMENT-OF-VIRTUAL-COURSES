@@ -42,7 +42,6 @@ Below is the Entity-Relationship (ER) diagram for the system, which provides a v
 
 ![ER Diagram](file:///C:/Users/juanj/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/45EFA623F6111A5E410641C6B86C85EA/Imagen%20de%20WhatsApp%202024-08-29%20a%20las%2021.25.14_05940a0f.jpg)
 
-> *Note: Replace `file:///C:/Users/juanj/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/45EFA623F6111A5E410641C6B86C85EA/Imagen%20de%20WhatsApp%202024-08-29%20a%20las%2021.25.14_05940a0f.jpg` with the actual path to your ER diagram image in the repository.*
 
 ## Trello Board
 
