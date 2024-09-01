@@ -28,6 +28,10 @@ public class StudentEntity {
     @Column(nullable = false)
     private LocalDateTime creatAt;
 
+
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT true")
+    private Boolean active;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "class_id", referencedColumnName = "id")
     private ClassEntity class_id;
