@@ -4,34 +4,19 @@ import com.juan.RIWI_COURSES.entities.ClassEntity;
 import com.juan.RIWI_COURSES.repositories.ClassRepository;
 import com.juan.RIWI_COURSES.services.interfaces.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClassServiceImpl implements ClassService {
-        //Atributos de ClassServiceImpl
+
     @Autowired
     private ClassRepository classRepo;
-
-    //Constructores de ClassServiceImpl
-    //Asignadores de atributos de ClassServiceImpl (setters)
-    //Lectores de atributos de ClassServiceImpl (getters)
-        //Métodos de ClassServiceImpl
-    @Override
-    public List<ClassEntity> readAll() {
-        return this.classRepo.findAll();
-    }
-
-    @Override
-    public ClassEntity readByID(String id) {
-        return this.classRepo.findById(id).orElseThrow();
-    }
-
-    /*@Override
-    public String create(ClassRequest classRequest) {
-        return "";
-    }*/
 
     @Override
     public ClassEntity save(ClassEntity classEntity) {
@@ -41,5 +26,16 @@ public class ClassServiceImpl implements ClassService {
     @Override
     public void destroy(String id) {
         this.classRepo.deleteById(id);
+    }
+
+    @Override
+    public Page<Class> getPaginatedClasses(String name, String description, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return classRepo.findPageable(name,description,pageable);
+    }
+
+    @Override
+    public Optional<Class> getClassById(Long id) {
+        return classRepo.findByIdAndActive(id);
     }
 }
