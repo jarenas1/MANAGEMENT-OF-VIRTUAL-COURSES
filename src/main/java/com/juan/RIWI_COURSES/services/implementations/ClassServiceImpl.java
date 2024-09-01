@@ -35,7 +35,8 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public Optional<ClassEntity> getClassById(Long id) {
+    public Optional<ClassEntity> getClassById(String id) {
         return classRepo.findByIdAndActive(id);
     }
+
 }
