@@ -2,8 +2,11 @@ package com.juan.RIWI_COURSES.controllers;
 
 import com.juan.RIWI_COURSES.entities.ClassEntity;
 import com.juan.RIWI_COURSES.services.interfaces.ClassService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +17,8 @@ import java.util.Optional;
 public class ClassController {
     @Autowired
     ClassService classService;
+
+    //GET CLASSES
 
     @GetMapping
     public ResponseEntity<Page<ClassEntity>> getPaginatedClasses(
@@ -32,8 +37,10 @@ public class ClassController {
         return ResponseEntity.ok(paginatedClasses);
     }
 
+    //FIND CLASS BY ID
+
     @GetMapping("{id}")
-    public ResponseEntity getById(@PathVariable String id){
+    public ResponseEntity<ClassEntity> getById(@PathVariable String id){
         Optional<ClassEntity> optionalClassEntity = classService.getClassById(id);
 
         if (optionalClassEntity.isPresent()){
@@ -41,5 +48,13 @@ public class ClassController {
         }else{
             return ResponseEntity.notFound().build();
         }
+    }
+    //SAVE CLASS
+
+    @PostMapping
+    public ResponseEntity<ClassEntity> saveClass(@Valid @RequestBody ClassEntity classToSave){
+        ClassEntity classSaved = classService.save(classToSave);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(classSaved);
     }
 }
