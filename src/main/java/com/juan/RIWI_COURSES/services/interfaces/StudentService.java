@@ -10,12 +10,6 @@ import java.util.List;
 
 public interface StudentService extends ReadAll<StudentEntity>,
         ReadByID<StudentEntity, String>,
-        /*Create<StudentRequest, StudentEntity>,*/
-        Save<StudentEntity>,
-        Destroy<String>{
-    //Atributos de StudentService
-    //Constructores de StudentService
-    //Asignadores de atributos de StudentService (setters)
-    //Lectores de atributos de StudentService (getters)
-    //Métodos de StudentService
+        Save<StudentEntity>{
 }
+

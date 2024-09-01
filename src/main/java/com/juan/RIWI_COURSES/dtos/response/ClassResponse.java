@@ -2,10 +2,7 @@ package com.juan.RIWI_COURSES.dtos.response;
 
 import com.juan.RIWI_COURSES.entities.LessonEntity;
 import com.juan.RIWI_COURSES.entities.StudentEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
 public class ClassResponse {
 
     //Media without id and status
